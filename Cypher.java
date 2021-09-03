@@ -84,12 +84,12 @@ public class Cypher {
     }
   }
 
-  /* ***************************************************************
-  * Metodo: decipher
-  * Funcao: Executa a operacao para decifrar a mensagem passada como parametro
-  * Parametros: a mensagem a ser decifrada
-  * Retorno: void
-  *************************************************************** */
+/* ***************************************************************
+* Metodo: decipher
+* Funcao: Executa a operacao para decifrar a mensagem passada como parametro
+* Parametros: a mensagem a ser decifrada
+* Retorno: void
+*************************************************************** */
   public void decipher(String encrypt) {
     /*
      * Preparando variaveis
@@ -115,5 +115,5 @@ public class Cypher {
       
       decrypted.appendCodePoint(decryptedCodePoints.get(i));  // concatena um caractere compativel com o codigo na posicao na StringBuilder
     }
-  } // fimdo metodo decipher
-} // fim da classe Cypher
+  }
+}
