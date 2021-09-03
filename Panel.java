@@ -1,6 +1,5 @@
 /* ***************************************************************
-* Autor: Daniel Neves Brasileiro Costa Silveira
-* Matricula: 201911913
+* Autor: Dan7Arievlis
 * Inicio: 26/02/2021
 * Ultima alteracao: 02/03/2021
 * Nome: Panel
@@ -82,7 +81,7 @@ public class Panel extends JPanel {
     // Label limite de caracteres de Criptografado
     formatContent(2, 1, GridBagConstraints.LINE_END, new Insets(38, 0, 0, 0), true, false);
     add(limitEncrypt, constraints);  // adiciona componente segundo restricoes
-  }//fim do construtor
+  }
 
 /* ***************************************************************
 * Metodo: init
@@ -103,9 +102,8 @@ public class Panel extends JPanel {
     keyTextField.setPreferredSize(new Dimension(0, 26));  // define altura
     keyTextField.addKeyListener(new KeyAdapter() {  //funcao para limitar o numero de caracteres na caixa de texto
       public void keyTyped(KeyEvent e) {
-        if(keyTextField.getText().length() >= cypher.getKey().capacity()) {  // limite de caracteres na caixa de texto definido para a capacidade da chave da cifra
+        if(keyTextField.getText().length() >= cypher.getKey().capacity())  // limite de caracteres na caixa de texto definido para a capacidade da chave da cifra
           e.consume();
-        }// fim do if
       }
     });
     //
@@ -113,9 +111,8 @@ public class Panel extends JPanel {
     encryptedTextField.setPreferredSize(new Dimension(0, 26));  // define altura
     encryptedTextField.addKeyListener(new KeyAdapter() {  //funcao para limitar o numero de caracteres na caixa de texto
       public void keyTyped(KeyEvent e) {
-        if(encryptedTextField.getText().length() >= cypher.getEncrypted().capacity()) {  // limite de caracteres na caixa de texto definido para a capacidade da chave da cifra
+        if(encryptedTextField.getText().length() >= cypher.getEncrypted().capacity())  // limite de caracteres na caixa de texto definido para a capacidade da chave da cifra
           e.consume();
-        }// fim do if
       }
     });
     //
@@ -123,9 +120,8 @@ public class Panel extends JPanel {
     decryptedTextField.setPreferredSize(new Dimension(0, 26));  // define altura
     decryptedTextField.addKeyListener(new KeyAdapter() {  //funcao para limitar o numero de caracteres na caixa de texto
       public void keyTyped(KeyEvent e) {
-        if(decryptedTextField.getText().length() >= cypher.getDecrypted().capacity()) {  // limite de caracteres na caixa de texto definido para a capacidade da chave da cifra
+        if(decryptedTextField.getText().length() >= cypher.getDecrypted().capacity())  // limite de caracteres na caixa de texto definido para a capacidade da chave da cifra
           e.consume();
-        }// fim do if
       }
     });
     //
@@ -136,7 +132,7 @@ public class Panel extends JPanel {
     limitKey = new JLabel(refreshKeyLimit());  // inicia o rotulo
     limitEncrypt = new JLabel(refreshEncryptLimit());  // inicia o rotulo
     limitDecrypt = new JLabel(refreshDecryptLimit());  // inicia o rotulo
-  }// fim do metodo init
+  }
 
 /* ***************************************************************
 * Metodo: formatContent
@@ -157,7 +153,7 @@ public class Panel extends JPanel {
     constraints.gridy = posy;
     constraints.anchor = gridBagConstraints;
     constraints.insets = insets;
-  }// fim do metodo formatContent
+  }
 
 /* ***************************************************************
 * Metodo: refreshKeyLimit
@@ -169,7 +165,7 @@ public class Panel extends JPanel {
     cypher.changeKey(keyTextField.getText());
     return (cypher.getKey().capacity() - cypher.getKey().length())
       + "/" + cypher.getKey().capacity();
-  }// fim do metodo refreshKeyLimit
+  }
 
 /* ***************************************************************
 * Metodo: refreshEncryptLimit
@@ -181,7 +177,7 @@ public class Panel extends JPanel {
     cypher.setEncrypted(encryptedTextField.getText());
     return (cypher.getEncrypted().capacity() - cypher.getEncrypted().length())
        + "/" + cypher.getEncrypted().capacity();
-  }// fim do metodo refreshEncryptedLimit
+  }
 
 
 /* ***************************************************************
@@ -194,41 +190,41 @@ public class Panel extends JPanel {
     cypher.setDecrypted(decryptedTextField.getText());
     return (cypher.getDecrypted().capacity() - cypher.getDecrypted().length())
        + "/" + cypher.getDecrypted().capacity();
-  }// fim do metodo refreshDecryptedLimit
+  }
 
   public Cypher getCypher() {
     return cypher;
-  } // fim do metodo getCypher
+  }
 
   public JButton getEncryptButton() {
     return encryptButton;
-  } // fim do metodo getEncryptButton
+  }
 
   public JButton getDecryptButton() {
     return decryptButton;
-  } // fim do metodo getDecryptButton
+  }
 
   public JTextField getKeyTextField() {
     return keyTextField;
-  } // fim do metodo getKeyTextField
+  }
 
   public JTextField getEncryptedTextField() {
     return encryptedTextField;
-  } // fim do metodo getEncryptedTextField
+  }
 
   public JTextField getDecryptedTextField() {
     return decryptedTextField;
-  } // fim do metodo getDecryptedTextField
+  }
 
   public JLabel getLimitKey() {
     return limitKey;
-  } // fim do metodo getLimitKey
+  }
 
   public JLabel getLimitEncrypt() {
     return limitEncrypt;
-  } // fim do metodo getLimitEncrypt
+  }
 
   public JLabel getLimitDecrypt() {
     return limitDecrypt;
-  } // fim do metodo getLimitDecrypt
-} // fim do classe Panel
+  }
+}
